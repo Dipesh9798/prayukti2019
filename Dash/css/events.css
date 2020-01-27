@@ -1,0 +1,33 @@
+.circle-icon {
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 100px;
+    vertical-align: center;
+}
+.overlay {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  opacity: 0;
+  background-color: #696969;
+}
+
+.circle-icon:hover .overlay {
+  opacity: 0.8;
+}
+
+.text {
+  color: white;
+  font-size: 17px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: auto;
+}

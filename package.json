@@ -1,0 +1,19 @@
+{
+  "name": "prayukti-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "index.js"
+  },
+  "author": "Gauri",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "firebase": "^5.8.1",
+    "firebase-admin": "^6.5.1",
+    "firebaseauth": "^1.0.0"
+  }
+}

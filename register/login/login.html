@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Prayukti | Login</title>
+	<link rel="icon" type="image/ico" href="images/hit.png" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->
+
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="../../css/loader.css">
+
+	<link rel="stylesheet" type="text/css" href="css/loginutil.css">
+	<!--===============================================================================================-->
+	
+	<script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase-auth.js"></script>
+	<script type="text/javascript">
+		var config = {
+			apiKey: "AIzaSyAwRWIL3yjBjZ1EM94zBl-Di1Yu39BPlts",
+			authDomain: "prayukti-26e14.firebaseapp.com",
+			databaseURL: "https://prayukti-26e14.firebaseio.com",
+			projectId: "prayukti-26e14",
+			storageBucket: "prayukti-26e14.appspot.com",
+			messagingSenderId: "640937198761"
+		};
+		firebase.initializeApp(config);
+	</script>
+	
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+	<script type="text/javascript" src="js/login.js"></script>
+
+</head>
+<body>
+	<div id="p_bar" class="loading">Loading&#00000;</div>
+
+	<div class="limiter">
+		<div class="container-login100" style="background-image:url('images/red2.jpg');">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<a href="/"><img src="images/img-01.png" alt="IMG"></a>
+				</div>
+
+				<!-- <form class="login100-form validate-form" id="login-form" method ="POST" name ="login"> -->
+					<div class="login100-form validate-form">
+						<span class="login100-form-title">
+							Login
+						</span>
+
+
+						<div id="number-container" class="wrap-input100 validate-input" data-validate = "phone number required:">
+							<input class="input100" type="tel" name="number" id="number" placeholder="Phone Number">
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<i class="fa fa-mobile" aria-hidden="true"></i>
+							</span>
+						</div>
+
+						<div id="recaptcha-container"></div>
+						<div class="container-login100-form-btn" style="padding-bottom: 20px">
+							<button class="login100-form-btn" value="Submit" id="submit" onclick="sendOTPToMobile()">
+								Submit
+							</button>
+						</div>
+
+						<div id="login_opt_field" style="display :none" class="wrap-input100 validate-input" data-validate = "Password is required">
+							<input class="input100" type="password" id="password" name="password" placeholder="OTP">
+							<span class="focus-input100"></span>
+							<span class="symbol-input100">
+								<i class="fa fa-lock" aria-hidden="true"></i>
+							</span>
+						</div>
+						<div id="login_opt_sbm" style= "display: none" class="container-login100-form-btn">
+							<button class="login100-form-btn"  value="Login" id="login" onclick="verifySentOTP()">
+								Login
+							</button>
+						</div>
+
+						<div class="text-center p-t-12">
+							<span class="txt1">
+								Forgot
+							</span>
+							<a class="txt2" href="#">
+								Username / Password?
+							</a>
+						</div>
+
+						<div class="text-center p-t-136">Haven't registered yet?
+							<a class="txt2" href="/signup/">Signup here.
+							</a>
+							<br>
+							<a class="txt2" href="/">Return to Home Page</a>
+						</div>
+					</div>
+					<!-- </form> -->
+				</div>
+			</div>
+		</div>
+
+	
+
+		<footer>
+			<div class="container">
+                   
+				<div class="copyright">
+					<!--Do not remove Backlink from footer of the template. To remove it you can purchase the Backlink !-->
+					&copy; Designed by Team Prayukti 2k19 &nbsp;
+					<a href="https://www.facebook.com/prayuktihith/"><i class="fa fa-facebook"></i></a>
+				</div>
+
+			</div>
+		</footer>
+		
+	<!--===============================================================================================-->
+		<script src="vendor/bootstrap/js/popper.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<!--===============================================================================================-->
+		<script src="vendor/select2/select2.min.js"></script>
+	
+
+		<!--===============================================================================================-->
+		<script src="vendor/tilt/tilt.jquery.min.js"></script>
+		<script >
+			$('.js-tilt').tilt({
+				scale: 1.1
+			})
+			</script>
+			<!--===============================================================================================-->
+			<script src="js/main.js"></script>
+
+		</body>
+		</html>

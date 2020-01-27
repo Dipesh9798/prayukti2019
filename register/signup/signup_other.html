@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Prayukti | Sign Up</title>
+	<link rel="icon" type="image/ico" href="images/hit.png" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+	<!--===============================================================================================-->
+	<link
+	rel="stylesheet"
+	type="text/css"
+	href="vendor/bootstrap/css/bootstrap.min.css"
+	/>
+	<!--===============================================================================================-->
+	<link
+	rel="stylesheet"
+	type="text/css"
+	href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+	/>
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
+	<!--===============================================================================================-->
+	<link
+	rel="stylesheet"
+	type="text/css"
+	href="vendor/css-hamburgers/hamburgers.min.css"
+	/>
+	<!--===============================================================================================-->
+	<link
+	rel="stylesheet"
+	type="text/css"
+	href="vendor/select2/select2.min.css"
+	/>
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/signup.css" />
+	<link rel="stylesheet" type="text/css" href="css/signuputil.css" />
+	<link rel="stylesheet" type="text/css" href="../../css/loader.css" />
+	<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.css" />
+
+	<script src="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	
+	<script type="text/javascript">
+		var config = {
+			apiKey: "AIzaSyAwRWIL3yjBjZ1EM94zBl-Di1Yu39BPlts",
+			authDomain: "prayukti-26e14.firebaseapp.com",
+			databaseURL: "https://prayukti-26e14.firebaseio.com",
+			projectId: "prayukti-26e14",
+			storageBucket: "prayukti-26e14.appspot.com",
+			messagingSenderId: "640937198761"
+		};
+		firebase.initializeApp(config);
+		</script>
+
+		<script src="js/signup_other.js"></script>
+
+		<!--===============================================================================================-->
+	</head>
+	<body>
+		<div id="p_bar" class="loading">Loading&#00000;</div>
+
+		<div class="limiter">
+
+			<div
+			class="container-login100"
+			style="background-image:url('images/red2.jpg');"
+			>
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<a href="/"><img src="images/img-01.png" alt="IMG"/></a>
+				</div>
+
+				<div class="login100-form validate-form">
+
+					<span class="login100-form-title">
+						Sign Up
+					</span>
+
+					<div id="number-layout"  class="wrap-input100 validate-input" data-validate = "phone number required:">
+						<input class="input100" type="tel" name="number" id="number" placeholder="Phone Number">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-mobile" aria-hidden="true"></i>
+						</span>
+					</div>
+					<div id="recaptcha-container"></div>
+					<div class="container-login100-form-btn" id="sendotp-layout">
+						<button class="login100-form-btn" id="sendotp" onclick="sendOTPToMobile()">
+							Submit
+						</button>
+					</div>
+
+					<div style="display:none" id="otp-field-layout" class="wrap-input100 validate-input" data-validate = "OTP is required">
+						<input class="input100" type="text" name="otp" id="otp" placeholder="OTP">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div style="display:none" class="container-login100-form-btn" id="sendotp-sbm-btn">
+						<button class="login100-form-btn" id="sendotp" onclick="verifyOTP()">
+							Submit
+						</button>
+					</div>
+
+					<div style="display: none" class="wrap-input100 validate-input"id= "name-layout" data-validate="Name is required">
+						<input
+						class="input100"
+						type="text"
+						name="name"
+						id="name"
+						placeholder="Full Name"
+						/>
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div style="display: none;" 
+					class="wrap-input100 validate-input"
+					data-validate="phone number required:"
+					>
+					<input
+					class="input100"
+					type="tel"
+					name="number"
+					placeholder="Phone Number"
+					/>
+					<span class="focus-input100"></span>
+					<span class="symbol-input100">
+						<i class="fa fa-mobile" aria-hidden="true"></i>
+					</span>
+				</div>
+
+				<div style="display: none;" 
+				class="wrap-input100 validate-input"
+				data-validate="Name of College is required"
+				id="college-name-layout"
+				>
+				<input
+				class="input100"
+				type="text"
+				name="name"
+				id="college_name"
+				placeholder="Name of College"
+				/>
+				<span class="focus-input100"></span>
+				<span class="symbol-input100">
+					<i class="fa fa-graduation-cap" aria-hidden="true"></i>
+				</span>
+			</div>
+
+			<div style="display: none;" 
+			class="wrap-input100 validate-input"
+			data-validate="Valid email address is required" id="email-layout"
+			>
+			<input
+			class="input100"
+			type="text"
+			name="email"
+			id="email"
+			placeholder="Email"
+			/>
+			<span class="focus-input100"></span>
+			<span class="symbol-input100">
+				<i class="fa fa-envelope" aria-hidden="true"></i>
+			</span>
+		</div>
+		<div style="display: none;" 
+		class="wrap-input100 validate-input"
+		data-validate="Required"
+		style="max-width: 90%"
+		id="tshirt-layout"
+		>
+		<span style="color: #fff">T - Shirt Size :</span><br />
+		<select id="t_shirt_size" style="margin: 5px 5px">
+			<option value="38">38</option>
+			<option value="40">40</option>
+			<option value="42">42</option>
+			<option value="42">44</option> </select
+			><br />
+			<span style="color: #fff">T - Shirt type :</span><br />
+			<select id="t_shirt_type" style="margin: 5px 5px">
+				<option value="male">Male</option>
+				<option value="female">Female</option>
+			</select>
+		</div>
+
+		<!--<div class="">
+			<input type="checkbox" name="terms" id="terms" onchange="activateButton(this)">  I Agree to the Terms & Coditions
+			</div>-->
+
+			<div style="display: none;" class="container-login100-form-btn" id="final-sbm-btn">
+				<button class="login100-form-btn" id="signup" onclick="regsiterOtherStudent()">
+					Sign Up
+				</button>
+			</div>
+
+			<div class="text-center p-t-136">
+				Already have an account?
+				<a class="txt2" href="/login">Log in </a>
+				<br />
+				<a class="txt2" href="/">Return to Homepage</a>
+			</div>
+		</div>
+
+	</div>
+</div>
+</div>
+<footer>
+	
+<div class="container">
+	<div class="copyright">
+		<!--Do not remove Backlink from footer of the template. To remove it you can purchase the Backlink !-->
+		&copy; Designed by Team Prayukti 2k19 &nbsp;
+		<a href="https://www.facebook.com/prayuktihith/"
+		><i class="fa fa-facebook"></i
+			></a>
+		</div>
+	</div>
+</footer>
+
+<!--===============================================================================================-->
+<script src="vendor/bootstrap/js/popper.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/tilt/tilt.jquery.min.js"></script>
+<script>
+	$(".js-tilt").tilt({
+		scale: 1.1
+	});
+	</script>
+	<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+</body>
+</html>
